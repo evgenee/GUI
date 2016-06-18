@@ -1,0 +1,146 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision )
++++ .idea/modules.xml	(revision )
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/ImageConverter.iml" filepath="$PROJECT_DIR$/.idea/ImageConverter.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.name	(revision )
++++ .idea/.name	(revision )
+@@ -0,0 +1,1 @@
++ImageConverter
+\ No newline at end of file
+Index: ImageConverterGui.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ImageConverterGui.py	(revision )
++++ ImageConverterGui.py	(revision )
+@@ -0,0 +1,36 @@
++import tkinter as tk
++import tkinter.tix as tix
++import tkinter.ttk as ttk
++from tkinter import filedialog
++
++class ImageConverterGui(tk.Frame):
++    def __init__(self, master = None):
++        tk.Frame.__init__(self, master)
++        self.grid()
++        self.initUI()
++
++    def initUI(self):
++        self.master.title("Image Converter")
++        self.lblPath = tk.Label(self, text='Image directory path:')
++        self.lblPath.grid(row=0, column=0, sticky='w')
++        self.entrPath = tk.Entry(self, width=80)
++        self.entrPath.grid(row=0, column=1, columnspan=3, sticky='we', padx=5)
++        self.btnBrowseDir = tk.Button(self, text='Browse...', command=lambda:self.getDir(self.entrPath))
++        self.btnBrowseDir.grid(row=0, column=4, sticky='w')
++        self.txtLog = tk.Text(self)
++        self.txtLog.grid(row=1, column=0, columnspan=5, padx=5, pady=5)
++
++    def getDir(self, entryDir):
++        dirname = tk.filedialog.askdirectory(initialdir=entryDir)
++        if dirname:
++            self.dirname.set(dirname)
++            self.entrPath.delete(0,tk.END)
++            self.entrPath.insert(0,dirname)
++
++def main():
++    root = tk.Tk()
++    #root.geometry("600x450+250+150")
++    app = ImageConverterGui(master = root)
++    app.mainloop()
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision )
++++ .idea/misc.xml	(revision )
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
++    <OptionsSetting value="true" id="Add" />
++    <OptionsSetting value="true" id="Remove" />
++    <OptionsSetting value="true" id="Checkout" />
++    <OptionsSetting value="true" id="Update" />
++    <OptionsSetting value="true" id="Status" />
++    <OptionsSetting value="true" id="Edit" />
++    <ConfirmationsSetting value="0" id="Add" />
++    <ConfirmationsSetting value="0" id="Remove" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.4.3 (C:\Anaconda3\python.exe)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision )
++++ .idea/vcs.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/ImageConverter.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/ImageConverter.iml	(revision )
++++ .idea/ImageConverter.iml	(revision )
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++  <component name="TestRunnerService">
++    <option name="projectConfiguration" value="Nosetests" />
++    <option name="PROJECT_TEST_RUNNER" value="Nosetests" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(revision )
++++ .idea/encodings.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="PROJECT" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
